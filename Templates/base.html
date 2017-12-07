@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/css/main.css" />
+    <link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css rel="stylesheet">
+
+    Patrick Chao's <a class="udacity-link" href="https://classroom.udacity.com/courses/cs253">Udacity CS 253</a> Projects
+
+</head>
+<br>
+<br>
+<br>
+<body>
+    {% if user %}
+      <div class="login-area">
+        {{user.name}}
+        |
+        <a class="login-link" href="/logout">logout</a>
+      </div>
+    {% endif %}
+
+    {% if not user %}
+    <div class="login-area">
+        <a class="login-link" href="/login">login</a>
+        |
+        <a class="login-link" href="/signup">signup</a>
+    </div>
+    {% endif %}
+
+    <div class="controls">
+      {% block controls %}{% endblock %}
+    </div>
+
+    <div class = "side-bar">
+      <div class = "col-lg-12 col-sm-6 text-center">
+
+          <a href="/asciichan">Kinda forum</a>
+          <br>
+          <a href="/blog">Kinda blog!</a>
+
+      </div>
+    </div>
+
+    <div class="container">{% block content %}{% endblock %}</div>
+    <br>
+    <br>
+    <div class="container">
+        {% block footer %}
+        <br>
+        <a href = "/">  Home  |</a>
+        <a href = "/blog">  Blog  </a>
+        {% endblock %}
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{% extends "Templates/base.html" %}
+
+{% block controls %}
+  {% if user %}
+  <a href = "/_edit{{path}}">edit</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <div class = "page">
+    <div class="post-content">
+      {{page.content | safe}}
+    </div>
+  </div>
+{% endblock %}

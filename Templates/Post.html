@@ -1,0 +1,19 @@
+<div class = "col-lg-8 col-sm-12 text-left">
+  <div class="post-heading">
+    <div class="post-title">
+      {{post.subject}}
+    </div>
+
+    <div class="post-date">
+      {{post.created.strftime("%b %d, %Y")}}
+    </div>
+  </div>
+
+  <div class="post-content">
+    {{post._render_text | safe}}
+  </div>
+
+  <div class = "permalink">
+    <a href="/blog/{{post.key().id()}}">Permalink</a>
+  </div>
+</div>

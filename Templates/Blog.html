@@ -1,0 +1,28 @@
+{% extends "Templates/base.html" %}
+{% block title %}
+    Welcome to My Blog!
+{% endblock %}
+{% block content %}
+
+<div class = "container">
+  <div calss = "newpost">
+    <a href="/blog/newpost">Click here to create a new post!</a>
+  </div>
+</div>
+
+
+  {% if posts %}
+    <div>
+      {% for p in posts %}
+        {{ p.render() | safe }}
+      {% endfor %}
+    </div>
+  {% endif %}
+<br>
+<br>
+  <div class = "col-lg-8 col-sm-12 text-left">
+    <div class = "time">
+      Queried {{time}} seconds ago
+    </div>
+  </div>
+{% endblock %}

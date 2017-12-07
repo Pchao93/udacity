@@ -1,0 +1,26 @@
+
+{% extends "Templates/base.html" %}
+
+{% block controls %}
+  {% if page %}
+  <a href = "{{path}}">view</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <form class = "main-edit"
+        method = "post">
+
+  	<label>
+  		<div> Content </div>
+  		<textarea name = "content">{{page and page.content or ""}}</textarea>
+  	</label>
+  	<br>
+  	<div class = "form-footer">
+  		<button type="submit">Save</button>
+  	</div>
+
+  	<div class="error"> {{error}} </div>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="/static/main.css" />
+    <title>{% block title %}{% endblock %}</title>
+    This is my header for all my pages
+</head>
+<br>
+<br>
+<br>
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <br>
+    <br>
+    <div id="footer">
+        {% block footer %}
+        This is my footer for all my pages
+        <br>
+        <a href = "/"> Home </a>
+        {% endblock %}
+    </div>
+</body>
+</html>
